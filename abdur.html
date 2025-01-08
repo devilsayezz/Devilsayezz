@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Just For You</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300&family=Roboto+Mono:wght@700&display=swap');
+        
+        /* Reset body and html margin and padding, and ensure the layout is fluid */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Raleway', sans-serif;
+            height: 100%;
+            width: 100%;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            transition: background-color 1s, color 1s;
+        }
+
+        .intro {
+            background-color: #FF5733;
+            font-family: 'Pacifico', cursive;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .scrolling-text {
+            background-color: #33FF57;
+            font-family: 'Raleway', sans-serif;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        .rotating-section {
+            background-color: #3357FF;
+            font-family: 'Roboto Mono', monospace;
+            animation: rotate 0.5s linear infinite;
+        }
+
+        .final-message {
+            background-color: #FF33A1;
+            font-family: 'Raleway', sans-serif;
+            animation: fadeIn 2s ease-in;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Button styling */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Responsive Design for Mobile */
+        @media only screen and (max-width: 768px) {
+            section {
+                font-size: 1.5rem;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 1.2rem;
+                padding: 12px 24px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            section {
+                font-size: 1.2rem;
+                padding: 5px;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<section class="intro">
+    <div>
+        <p>Welcome to all of my friends!</p>
+        <div class="button-container">
+            <button onclick="scrollToSection('scrolling-text')">See More</button>
+        </div>
+    </div>
+</section>
+
+<section class="scrolling-text" id="scrolling-text">
+    <div>
+        <p>Scroll Down to Uncover Even More Wonders Awaiting You!</p>
+        <div class="button-container">
+            <button onclick="scrollToSection('rotating-section')">Next</button>
+        </div>
+    </div>
+</section>
+
+<section class="rotating-section" id="rotating-section">
+    <div>
+        <p>Catch me if you can!</p>
+        <div class="button-container">
+            <button onclick="scrollToSection('final-message')">Boom 💣💣</button>
+        </div>
+    </div>
+</section>
+
+<section class="final-message" id="final-message">
+    <div>
+        <p>You Are Spectacular! This is Just for You. Your friendship brightens my life, and I'm so grateful to have amazing friends like you. 🫂🫂!</p>
+    </div>
+</section>
+
+<script>
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
